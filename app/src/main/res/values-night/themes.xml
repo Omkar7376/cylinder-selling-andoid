@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.FTGCylinderProject" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/base_color</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="android:navigationBarColor">@color/white</item>
+    </style>
+</resources>

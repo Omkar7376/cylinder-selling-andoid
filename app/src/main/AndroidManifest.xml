@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApp"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Base.Theme.FTGCylinderProject"
+        tools:targetApi="31">
+        <activity
+            android:name=".agentdistributionmanagement.AgentCustReturnActivity"
+            android:exported="false" />
+        <activity
+            android:name=".agentdistributionmanagement.AgentCustReturn"
+            android:exported="false" />
+        <activity
+            android:name=".agentdistributionmanagement.AgentCustDistributionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".distributionmanagement.DistributionSummaryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".distributionmanagement.AgentReturnActivity"
+            android:exported="false" />
+        <activity
+            android:name=".distributionmanagement.AgentDistributionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".stockmanagement.StockUpdateDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".stockmanagement.StockCountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".stockmanagement.UpdateStockActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.DistributeCylinderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ReturnCylinderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AddNewStockActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dashboard.DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

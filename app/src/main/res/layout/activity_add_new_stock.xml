@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_dashboard_agent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dash_back"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_add_new_stock"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/base_color"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="Cylinder Stock"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="?attr/homeAsUpIndicator"/>
+
+
+    <TextView
+        android:id="@+id/label_add_new_stock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Enter Quantity"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/primary_text_color"/>
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_dashboard_view_assigned_cylinders"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/card_back"
+        app:cardElevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_add_new_stock">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp">
+
+            <TextView
+                android:id="@+id/tv_commercial_cylinder"
+                android:layout_width="172dp"
+                android:layout_height="27dp"
+                android:layout_marginStart="16dp"
+                android:text="Commercial Cylinder : "
+                android:textColor="@color/primary_text_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_commercial_cylinder_quantity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_commercial_cylinder_quantity" />
+
+            <EditText
+                android:id="@+id/et_commercial_cylinder_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:paddingVertical="8dp"
+                android:background="@drawable/shape_editext_border"
+                android:gravity="center"
+                android:hint="20"
+                android:inputType="number"
+                android:paddingHorizontal="16dp"
+                android:textSize="14sp"
+                android:textColor="@color/primary_text_color"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_commercial_cylinder"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="QYT"
+                android:textStyle="bold"
+                android:textColor="@color/primary_text_color"
+                app:layout_constraintEnd_toEndOf="@+id/et_commercial_cylinder_quantity"
+                app:layout_constraintStart_toStartOf="@+id/et_commercial_cylinder_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/et_commercial_cylinder_quantity" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_dashboard_view_agent_returns"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/card_back"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@id/card_dashboard_view_assigned_cylinders"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp">
+
+            <TextView
+                android:id="@+id/tv_domestic_cylinder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Domestic Cylinder :"
+                android:textColor="@color/primary_text_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_domestic_cylinder_quantity"
+                app:layout_constraintEnd_toStartOf="@+id/et_domestic_cylinder_quantity"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_domestic_cylinder_quantity" />
+
+            <EditText
+                android:id="@+id/et_domestic_cylinder_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:background="@drawable/shape_editext_border"
+                android:gravity="center"
+                android:hint="20"
+                android:inputType="number"
+                android:paddingVertical="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_domestic_cylinder"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="QYT"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/et_domestic_cylinder_quantity"
+                app:layout_constraintStart_toStartOf="@+id/et_domestic_cylinder_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/et_domestic_cylinder_quantity" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_dashboard_view_third_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/card_back"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toBottomOf="@id/card_dashboard_view_agent_returns"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp">
+
+            <TextView
+                android:id="@+id/tv_mini_lpg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="8dp"
+                android:text="Mini LPG : "
+                android:textColor="@color/primary_text_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_mini_lpg_quantity"
+                app:layout_constraintEnd_toStartOf="@+id/et_mini_lpg_quantity"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_mini_lpg_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="24dp"
+                android:paddingVertical="8dp"
+                android:gravity="center"
+                android:hint="20"
+                android:inputType="number"
+                android:background="@drawable/shape_editext_border"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_mini_lpg"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="QYT"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/et_mini_lpg_quantity"
+                app:layout_constraintStart_toStartOf="@+id/et_mini_lpg_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/et_mini_lpg_quantity" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
