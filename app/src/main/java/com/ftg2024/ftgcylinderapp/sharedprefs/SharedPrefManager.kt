@@ -34,7 +34,7 @@ class SharedPrefManager @Inject constructor(@ApplicationContext context: Context
         editor.apply()
     }
 
-    fun getLoginResponseData() : List<UserData>? {
+    fun getLoginResponseData() : List<LoginResponseData>? {
         val gson = Gson()
         val json = loginResponsePref.getString(LOGIN_RESPONSE_PREF, null)
         return if (json != null) {

@@ -1,7 +1,10 @@
 package com.ftg2024.ftgcylinderapp.di
 
+import com.ftg2024.ftgcylinderapp.admincustomermanagement.repo.CustomerManagementApiService
+import com.ftg2024.ftgcylinderapp.agentdistributionmanagement.repo.AgentCustDistributionApiService
 import com.ftg2024.ftgcylinderapp.auth.repo.LoginApiService
 import com.ftg2024.ftgcylinderapp.constants.ApiConstants.BASE_URL
+import com.ftg2024.ftgcylinderapp.dashboard.repo.DashboardApiService
 import com.ftg2024.ftgcylinderapp.distributionmanagement.repo.DistributionMgmtApiService
 import com.ftg2024.ftgcylinderapp.retrofit.ApiKeyInterceptor
 import com.ftg2024.ftgcylinderapp.retrofit.AuthTokenKeyInterceptor
@@ -46,6 +49,12 @@ class ApiModule {
 
     @Singleton
     @Provides
+    fun provideDashboardApiService(retrofit : Retrofit) : DashboardApiService {
+        return retrofit.create(DashboardApiService :: class.java)
+    }
+
+    @Singleton
+    @Provides
     fun provideStockManagementApiService(retrofit: Retrofit): StockManagementApiService {
         return retrofit.create(StockManagementApiService::class.java)
     }
@@ -54,5 +63,17 @@ class ApiModule {
     @Provides
     fun provideDistributeManagementApiService(retrofit : Retrofit) : DistributionMgmtApiService {
         return retrofit.create(DistributionMgmtApiService :: class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun agentCustDistributionApiService(retrofit: Retrofit) : AgentCustDistributionApiService {
+        return retrofit.create(AgentCustDistributionApiService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun customerManagementApiService(retrofit: Retrofit) : CustomerManagementApiService{
+        return retrofit.create(CustomerManagementApiService::class.java)
     }
 }

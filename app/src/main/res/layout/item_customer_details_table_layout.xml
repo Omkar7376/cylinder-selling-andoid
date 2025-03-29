@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_customer_management"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_customer_management_name"
+                android:layout_width="130dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_item_border"
+                android:text="Customer Name"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_activity_customer_management_name"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_customer_management_mob_no"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:text="Mobile No."
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_activity_customer_management_mob_no"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_customer_management_14.2kg"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:text="14.2 kg Cylender"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_activity_customer_management_14.2kg"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:hint="0"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_customer_management_5kg_dom"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:text="5 kg dom Cylender"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_activity_customer_management_5kg_dom"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:hint="0"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_customer_management_19kg"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:text="19 kg Cylender"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_activity_customer_management_19kg"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:hint="0"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_customer_management_5kg_com"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border4"
+                android:text="5 kg com Cylender"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textview_activity_customer_management_5kg_com"
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border4"
+                android:gravity="center"
+                android:text=""
+                android:hint="0"
+                android:textStyle="bold" />
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

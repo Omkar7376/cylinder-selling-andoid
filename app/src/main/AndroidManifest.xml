@@ -16,6 +16,36 @@
         android:theme="@style/Base.Theme.FTGCylinderProject"
         tools:targetApi="31">
         <activity
+            android:name=".admincustomermanagement.CustomerManagementActivity"
+            android:exported="false" />
+        <activity
+            android:name=".stockmanagement.StockReturnConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".agentdistributionmanagement.AgentCustDistributionConfirmation"
+            android:exported="false" />
+        <activity
+            android:name=".distributionmanagement.AgentDistributionConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".stockmanagement.StockConfirmationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".distributionmanagement.CustomerDistributionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".distributionmanagement.DistributionDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".paymentmanagement.fragment.PaymentPendingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".paymentmanagement.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".paymentmanagement.PaymentPendingActivity"
+            android:exported="false" />
+        <activity
             android:name=".agentdistributionmanagement.AgentCustReturnActivity"
             android:exported="false" />
         <activity

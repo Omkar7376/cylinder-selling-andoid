@@ -13,8 +13,21 @@ class StockManagementRepo @Inject constructor(private val apiService: StockManag
     suspend fun addRemoveStock(request : StockUpdateRequest): Response<StockUpdateResponse?> {
         return try {
             val response = apiService.addReturnStock(request)
+            Log.d("####", "addRemoveStock: $response")
             if (response.isSuccessful) {
-                Response.Success(response.body())
+                val updateStockResponse = response.body()
+                Log.d("####", "addRemoveStock: $updateStockResponse")
+                if (updateStockResponse != null) {
+                    if (updateStockResponse.code == 200) {
+                        Response.Success(response.body())
+                    } else if(updateStockResponse.code == 301) {
+                        Response.Error(Exception("Entered Value is Greater than Stock"), response.code())
+                    } else {
+                        Response.Error(Exception("Something Went Wrong"), response.code())
+                    }
+                } else {
+                    Response.Error(Exception("Something Went Wrong"), response.code())
+                }
             } else {
                 Response.Error(Exception("Something Went Wrong"), response.code())
             }

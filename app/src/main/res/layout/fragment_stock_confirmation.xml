@@ -1,0 +1,529 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    app:layout_constraintTop_toBottomOf="@+id/toolbar_add_new_stock"
+    tools:context=".stockmanagement.fragment.StockConfirmationFragment">
+
+    <TextView
+        android:id="@+id/label_pending_payment"
+        style="@style/base_text_style_bold"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Confirm All Details"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_stock_confirmation"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_below="@+id/label_pending_payment"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label_pending_payment">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_fragment_stock_confirmation_truckNo"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text="Truck No."
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_fragment_stock_confirmation_invoice"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text="Invoice"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_fragment_stock_confirmation_date"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text="Date"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_stock_confirmation2"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_stock_confirmation">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border3"
+                android:gravity="center"
+                android:text="14.2 kg Cylender"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_stock_confirmation3"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_stock_confirmation2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_fragment_stock_confirmation_14.2kg_full"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text="Full"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_fragment_stock_confirmation_14.2kg_empty"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text="Empty"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_fragment_stock_confirmation_14.2kg_defective"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text="Defective"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_stock_confirmation4"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_stock_confirmation3">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/white"
+                android:background="@drawable/table_item_border3"
+                android:gravity="center"
+                android:text="5 kg dom. Cylender"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_stock_confirmation5"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_stock_confirmation4">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_stock_confirmation_5kg_dom_full"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text="Full"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_activity_stock_confirmation_5kg_dom_empty"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text="Empty"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_activity_stock_confirmation_5kg_dom_defective"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text="Defective"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_stock_confirmation6"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_stock_confirmation5">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/white"
+                android:background="@drawable/table_item_border3"
+                android:gravity="center"
+                android:text="19 kg Com. Cylender"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_stock_confirmation7"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_stock_confirmation6">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_stock_confirmation_19kg_full"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text="Full"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_activity_stock_confirmation_19kg_empty"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text="Empty"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_activity_stock_confirmation_19kg_defective"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text="Defective"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_stock_confirmation8"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_stock_confirmation7">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/white"
+                android:background="@drawable/table_item_border3"
+                android:gravity="center"
+                android:text="5 kg Com. Cylender"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_stock_confirmation9"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_stock_confirmation8">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_fragment_stock_confirmation_5kg_com_full"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border"
+                android:gravity="center"
+                android:text="Full"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_fragment_stock_confirmation_5kg_com_empty"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text="Empty"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/label_fragment_stock_confirmation_5kg_com_defective"
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border2"
+                android:gravity="center"
+                android:text="Defective"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border4"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border4"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="86dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_item_border4"
+                android:gravity="center"
+                android:text=""
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_confirmation_submit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/base_color"
+        android:text="Submit"
+        android:layout_marginBottom="16dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/tablelayout_activity_stock_confirmation9"
+        app:layout_constraintStart_toStartOf="@+id/tablelayout_activity_stock_confirmation9"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_stock_confirmation9" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/card_back"
+    android:background="@color/dash_back"
     android:padding="16dp">
 
     <TextView
@@ -30,31 +30,34 @@
             android:id="@+id/radio_option_1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Commercial Cylinder" />
+            android:text="Commercial Cylinder"
+            android:textColor="@color/primary_text_color"/>
 
         <RadioButton
             android:id="@+id/radio_option_2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Domestic Cylinder" />
+            android:text="Domestic Cylinder"
+            android:textColor="@color/primary_text_color"/>
 
         <RadioButton
             android:id="@+id/radio_option_3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mini LPG" />
+            android:text="Mini LPG"
+            android:textColor="@color/primary_text_color"/>
     </RadioGroup>
 
     <EditText
         android:id="@+id/cylinder_quantity"
-        android:layout_width="377dp"
-        android:layout_height="60dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="8dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/shape_editext_border"
         android:hint="Enter Cylinder Quantity"
-        android:paddingVertical="8dp"
-        android:paddingStart="8dp"
+        android:paddingVertical="12dp"
+        android:paddingStart="16dp"
         android:textColor="@color/primary_text_color"
         android:textColorHint="@color/gray"
         android:textSize="16sp"
@@ -67,6 +70,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginHorizontal="8dp"
         android:text="Select"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"

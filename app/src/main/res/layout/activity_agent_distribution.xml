@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/container_agent_distribution"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dash_back">
-
+    android:background="@color/dash_back"
+    tools:context=".distributionmanagement.AgentReturnActivity">
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_add_new_stock"
+        android:id="@+id/toolbar_distribution_cylinder"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/base_color"
@@ -19,436 +17,299 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Assign Cylinder"
+        app:title="Return Cylinder"
         app:titleTextColor="@android:color/white"
         app:navigationIcon="?attr/homeAsUpIndicator" />
 
 
-    <TextView
-        android:id="@+id/label_agent_distribution_date_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Date And Time: "
-        android:textColor="@color/primary_text_color"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_add_new_stock" />
-
-    <TextView
-        android:id="@+id/textview_agent_distribution_date_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="09 Jan 2025 : 04:30 PM"
-        android:textColor="@color/primary_text_color"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/label_agent_distribution_date_time"
-        app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_date_time" />
-
-    <TextView
-        android:id="@+id/label_agent_distribution_select"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Please Select Agent"
-        android:textColor="@color/primary_text_color"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_date_time" />
-
-    <TextView
-        android:id="@+id/textview_update_search_agent"
+    <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/shape_editext_border"
-        android:text="Search Agent"
-        android:paddingVertical="16dp"
-        android:paddingStart="8dp"
-        android:textColor="@color/primary_text_color"
-        android:textColorHint="@color/primary_text_color"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_select" />
-
-    <TextView
-        android:id="@+id/tv_search_agent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Selected Agent :"
-        android:textColor="@color/primary_text_color"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_update_search_agent" />
-
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card_dashboard_view_select_agent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="54dp"
-        app:cardBackgroundColor="@color/card_back"
-        app:strokeColor="@color/base_color"
+        app:layout_constraintBottom_toTopOf="@+id/button_agent_distribution_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textview_update_search_agent">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_distribution_cylinder">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingVertical="20dp">
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/tv_name_label"
-                android:layout_width="wrap_content"
+                android:id="@+id/search_agent_distribution"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:text="Name:"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Search Delivery Boy Name"
+                android:paddingVertical="16dp"
+                android:paddingStart="8dp"
                 android:textColor="@color/primary_text_color"
-                android:textSize="14sp"
+                android:textColorHint="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/tv_name_value"
+                android:id="@+id/label_agent_distribution_date_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:gravity="end"
-                android:text=""
-                android:textColor="@color/primary_text_color"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_name_label" />
-
-            <TextView
-                android:id="@+id/tv_phone_number_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="Phone Number:"
+                android:text="Date : "
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tv_name_label" />
+                app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_agent_mob_no" />
+
 
             <TextView
-                android:id="@+id/tv_phone_number_value"
+                android:id="@+id/et_agent_distri_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Select Date"
+                android:paddingVertical="16dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_date_time" />
+
+            <TextView
+                android:id="@+id/label_agent_distribution_agent_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                android:gravity="end"
+                android:layout_marginTop="16dp"
+                android:text="Delivery Boy Name : "
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/search_agent_distribution" />
+
+            <TextView
+                android:id="@+id/textview_agent_distribution_agent_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text=""
                 android:textColor="@color/primary_text_color"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_phone_number_label" />
+                app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_agent_name" />
+
+            <TextView
+                android:id="@+id/label_agent_distribution_agent_mob_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Delivery Boy Number : "
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_agent_distribution_agent_name" />
+
+            <TextView
+                android:id="@+id/textview_agent_distribution_agent_mobno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_agent_mob_no" />
+
+            <TextView
+                android:id="@+id/label_agent_distribution_agent_commercial_cylinder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="19 Kg Com Cylinders : "
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_agent_distri_date" />
+
+            <TextView
+                android:id="@+id/textview_agent_distribution_agent_commercial_cylinder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/label_agent_distribution_agent_commercial_cylinder"
+                app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_agent_commercial_cylinder" />
+
+            <EditText
+                android:id="@+id/editext_no_of_commercial_cylinders"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Quantity"
+                android:paddingVertical="12dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_agent_distribution_agent_commercial_cylinder" />
+
+            <TextView
+                android:id="@+id/label_agent_distribution_agent_domestic_cylinder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="14.2 Kg Cylinders : "
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editext_no_of_commercial_cylinders" />
+
+            <TextView
+                android:id="@+id/textview_agent_distribution_agent_domestic_cylinder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/label_agent_distribution_agent_domestic_cylinder"
+                app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_agent_domestic_cylinder" />
+
+            <EditText
+                android:id="@+id/edittext_agent_distribution_domestic_cylinder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Quantity"
+                android:paddingVertical="12dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_agent_domestic_cylinder" />
+
+            <TextView
+                android:id="@+id/label_agent_distribution_agent_mini_cylinder_com"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="5 Kg Com Cylinders: "
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/edittext_agent_distribution_domestic_cylinder" />
+
+              <EditText
+                android:id="@+id/edittext_agent_distribution_mini_cylinder_com"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                  android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Quantity"
+                android:paddingVertical="12dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_agent_mini_cylinder_com" />
+
+            <TextView
+                android:id="@+id/textview_agent_distribution_agent_mini_cylinder_dom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="5 Kg Dom Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/edittext_agent_distribution_mini_cylinder_com"
+                app:layout_constraintTop_toBottomOf="@+id/edittext_agent_distribution_mini_cylinder_com" />
+
+            <EditText
+                android:id="@+id/edittext_agent_distribution_mini_cylinder_dom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Quantity"
+                android:paddingVertical="12dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_agent_distribution_agent_mini_cylinder_dom" />
+
+            <!--<TextView
+                android:id="@+id/label_agent_distribution_agent_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Amount : "
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edittext_agent_distribution_mini_cylinder_dom" />
 
 
+            <TextView
+                android:id="@+id/textview_agent_distribution_agent_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/label_agent_distribution_agent_amount"
+                app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_agent_amount" />
 
+            <EditText
+                android:id="@+id/edittext_agent_distribution_amount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Amount"
+                android:paddingVertical="12dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_agent_amount" />
+-->
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </com.google.android.material.card.MaterialCardView>
-    <TextView
-        android:id="@+id/tv_assign_cylinder"
-        android:layout_width="wrap_content"
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_agent_distribution_submit"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="Please assign cylinder :"
-        android:textColor="@color/primary_text_color"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16sp"
+        android:text="Submit"
         android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@drawable/shape_button_drawable"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_dashboard_view_select_agent" />
-
-    <TextView
-        android:id="@+id/tv_add_link"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:text="Add Cylinder"
-        android:textColor="@color/base_color"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card_dashboard_view_select_agent" />
-
-    <LinearLayout
-        android:id="@+id/container_view_cylinders"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_add_link"
-        app:layout_constraintVertical_bias="1.0">
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_agent_distribution_commercial_cylinders"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="@color/card_back">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_agent_distribution_commercial_cylinders"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="16dp">
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_commercial_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:text="Type of Cylinder"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textview_agent_distribution_commercial_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="Commercial Cylinder"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_commercial_type" />
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_commercial_quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:text="Quantity : "
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_commercial_type" />
-
-                <TextView
-                    android:id="@+id/textview_agent_distribution_commercial_quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="50"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_commercial_quantity" />
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_commercial_edit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Edit"
-                    android:textColor="@color/base_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/textview_agent_distribution_commercial_quantity"
-                    app:layout_constraintTop_toBottomOf="@+id/textview_agent_distribution_commercial_quantity" />
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_commercial_remove"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="Remove"
-                    android:textColor="@color/base_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/label_agent_distribution_commercial_edit"
-                    app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_commercial_edit" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_agent_distribution_domestic_cylinders"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="@color/card_back">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_agent_distribution_domestic_cylinders"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="16dp">
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_domestic_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:text="Type of Cylinder"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textview_agent_distribution_domestictype"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="Domestic Cylinder"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_domestic_type" />
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_domestic_quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:text="Quantity : "
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_domestic_type" />
-
-                <TextView
-                    android:id="@+id/textview_agent_distribution_domestic_quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="50"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_domestic_quantity" />
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_domestic_edit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Edit"
-                    android:textColor="@color/base_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/textview_agent_distribution_domestic_quantity"
-                    app:layout_constraintTop_toBottomOf="@+id/textview_agent_distribution_domestic_quantity" />
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_domestic_remove"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="Remove"
-                    android:textColor="@color/base_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/label_agent_distribution_domestic_edit"
-                    app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_domestic_edit" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_agent_distribution_mini_cylinders"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginVertical="8dp"
-            app:cardBackgroundColor="@color/card_back">
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/container_agent_distribution_mini_cylinders"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="16dp">
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_mini_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:text="Type of Cylinder"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textview_agent_distribution_mini_type"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="Mine Cylinder"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_mini_type" />
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_mini_quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
-                    android:text="Quantity : "
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/label_agent_distribution_mini_type" />
-
-                <TextView
-                    android:id="@+id/textview_agent_distribution_mini_quantity"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="50"
-                    android:textColor="@color/primary_text_color"
-                    android:textSize="14sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_mini_quantity" />
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_mini_edit"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="Edit"
-                    android:textColor="@color/base_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/textview_agent_distribution_mini_quantity"
-                    app:layout_constraintTop_toBottomOf="@+id/textview_agent_distribution_mini_quantity" />
-
-                <TextView
-                    android:id="@+id/label_agent_distribution_mini_remove"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:text="Remove"
-                    android:textColor="@color/base_color"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@+id/label_agent_distribution_mini_edit"
-                    app:layout_constraintTop_toTopOf="@+id/label_agent_distribution_mini_edit" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-    </LinearLayout>
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

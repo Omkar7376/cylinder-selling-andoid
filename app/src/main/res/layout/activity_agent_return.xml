@@ -7,8 +7,9 @@
     android:layout_height="match_parent"
     android:background="@color/dash_back"
     tools:context=".distributionmanagement.AgentReturnActivity">
+
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_return_cylinder"
+        android:id="@+id/toolbar_distribution_cylinder"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/base_color"
@@ -21,75 +22,69 @@
         app:titleTextColor="@android:color/white"
         app:navigationIcon="?attr/homeAsUpIndicator" />
 
-    <EditText
-        android:id="@+id/search_agent_return"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="16dp"
-        android:paddingStart="8dp"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
-        android:textColor="@color/primary_text_color"
-        android:hint="Search Agent Name"
-        android:textColorHint="@color/gray"
-        android:background="@drawable/edit_text_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_return_cylinder" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/button_agent_return_submit"
+        app:layout_constraintBottom_toTopOf="@+id/button_agent_distribution_submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/search_agent_return">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_distribution_cylinder">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
 
             <TextView
-                android:id="@+id/label_agent_return_date_time"
-                android:layout_width="wrap_content"
+                android:id="@+id/search_agent_return"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Date and Time : "
+                android:background="@drawable/edit_text_background"
+                android:hint="Search Delivery Boy Name"
+                android:paddingVertical="16dp"
+                android:paddingStart="8dp"
                 android:textColor="@color/primary_text_color"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
-
-
-            <TextView
-                android:id="@+id/textview_agent_return_date_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="19 Jan 2025 05:30:31"
-                android:textColor="@color/primary_text_color"
-                android:textSize="14sp"
+                android:textColorHint="@color/gray"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/et_agent_return_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Select Date"
+                android:paddingVertical="16dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/gray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label_agent_return_agent_mob_no" />
 
             <TextView
                 android:id="@+id/label_agent_return_agent_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Agent Name : "
+                android:text="Delivery Boy Name : "
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/label_agent_return_date_time"/>
+                app:layout_constraintTop_toBottomOf="@+id/search_agent_return" />
 
             <TextView
                 android:id="@+id/textview_agent_return_agent_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Malasidha"
+                android:text=""
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -100,18 +95,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Agent Number : "
+                android:text="Delivery Boy Number : "
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/label_agent_return_agent_name"/>
+                app:layout_constraintTop_toBottomOf="@id/label_agent_return_agent_name" />
 
             <TextView
                 android:id="@+id/textview_agent_return_agent_mobno"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="9876543210"
+                android:text=""
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -122,18 +117,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="No. Of Commercial Cylinders : "
+                android:text="19 Kg Com Cylinders : "
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/label_agent_return_agent_mob_no"/>
+                app:layout_constraintStart_toStartOf="@+id/et_agent_return_date"
+                app:layout_constraintTop_toBottomOf="@+id/et_agent_return_date" />
 
             <TextView
-                android:id="@+id/textview_agent_return_agent_commercial_cylinder"
+                android:id="@+id/textview_agent_return_cust_commercial_cylinder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10"
+                android:text=""
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -144,11 +139,11 @@
                 android:id="@+id/editext_no_of_commercial_cylinders"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_background"
-                android:hint="Enter Commercial Return Quantity"
+                android:hint="Enter Quantity"
                 android:paddingVertical="12dp"
                 android:paddingStart="8dp"
-                android:layout_marginTop="8dp"
                 android:textColor="@color/primary_text_color"
                 android:textColorHint="@color/gray"
                 android:textSize="14sp"
@@ -161,7 +156,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="No. Of Domestic Cylinders : "
+                android:text="14.2 Kg Cylinders : "
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -172,7 +167,7 @@
                 android:id="@+id/textview_agent_return_agent_domestic_cylinder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10"
+                android:text=""
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -185,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_background"
-                android:hint="Enter Domestic Return Quantity"
+                android:hint="Enter Quantity"
                 android:paddingVertical="12dp"
                 android:paddingStart="8dp"
                 android:textColor="@color/primary_text_color"
@@ -196,35 +191,24 @@
                 app:layout_constraintTop_toBottomOf="@+id/label_agent_return_agent_domestic_cylinder" />
 
             <TextView
-                android:id="@+id/label_agent_return_agent_mini_cylinder"
+                android:id="@+id/label_agent_return_agent_mini_cylinder_com"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="No. Of Mini Cylinders : "
+                android:text="5 Kg Com Cylinders: "
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edittext_agent_return_domestic_cylinder" />
 
-            <TextView
-                android:id="@+id/textview_agent_return_agent_mini_cylinder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10"
-                android:textColor="@color/primary_text_color"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toEndOf="@+id/label_agent_return_agent_mini_cylinder"
-                app:layout_constraintTop_toTopOf="@+id/label_agent_return_agent_mini_cylinder" />
-
             <EditText
-                android:id="@+id/edittext_agent_return_mini_cylinder"
+                android:id="@+id/edittext_agent_return_mini_cylinder_com"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/edit_text_background"
-                android:hint="Enter Mini Return Quantity"
+                android:hint="Enter Quantity"
                 android:paddingVertical="12dp"
                 android:paddingStart="8dp"
                 android:textColor="@color/primary_text_color"
@@ -232,7 +216,59 @@
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/label_agent_return_agent_mini_cylinder" />
+                app:layout_constraintTop_toBottomOf="@+id/label_agent_return_agent_mini_cylinder_com" />
+
+            <TextView
+                android:id="@+id/textview_agent_return_agent_mini_cylinder_dom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="5 Kg Dom Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@+id/edittext_agent_return_mini_cylinder_com"
+                app:layout_constraintTop_toBottomOf="@+id/edittext_agent_return_mini_cylinder_com" />
+
+            <EditText
+                android:id="@+id/edittext_agent_return_mini_cylinder_dom"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_background"
+                android:hint="Enter Quantity"
+                android:paddingVertical="12dp"
+                android:paddingStart="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/gray"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview_agent_return_agent_mini_cylinder_dom" />
+
+            <TextView
+                android:id="@+id/label_return_total_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Total Amount : "
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edittext_agent_return_mini_cylinder_dom" />
+
+            <TextView
+                android:id="@+id/tv_return_total_amount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Calculate Total Amount"
+                android:textColor="@color/base_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edittext_agent_return_mini_cylinder_dom" />
 
             <TextView
                 android:id="@+id/label_agent_return_agent_amount"
@@ -244,13 +280,14 @@
                 android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edittext_agent_return_mini_cylinder" />
+                app:layout_constraintTop_toBottomOf="@+id/label_return_total_amount" />
+
 
             <TextView
                 android:id="@+id/textview_agent_return_agent_amount"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="10"
+                android:text=""
                 android:textColor="@color/primary_text_color"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -277,7 +314,7 @@
     </androidx.core.widget.NestedScrollView>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button_agent_return_submit"
+        android:id="@+id/button_agent_distribution_submit"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"

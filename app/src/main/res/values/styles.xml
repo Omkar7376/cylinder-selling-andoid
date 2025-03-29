@@ -6,4 +6,11 @@
     <style name="AppBottomSheetTheme" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/Widget.App.BottomSheet.Modal</item>
     </style>
+    <style name="base_text_style_bold">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/primary_text_color</item>
+    </style>
+    <style name="base_text_style">
+        <item name="android:textColor">@color/primary_text_color</item>
+    </style>
 </resources>

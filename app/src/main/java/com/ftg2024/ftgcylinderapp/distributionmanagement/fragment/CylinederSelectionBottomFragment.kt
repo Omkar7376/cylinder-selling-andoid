@@ -1,33 +1,30 @@
 package com.ftg2024.ftgcylinderapp.distributionmanagement.fragment
 
+
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ftg2024.ftgcylinderapp.R
+import com.ftg2024.ftgcylinderapp.databinding.FragmentCylinederSelectionBottomBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CylinederSelectionBottomFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class CylinederSelectionBottomFragment : BottomSheetDialogFragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
+class CylinederSelectionBottomFragment : BottomSheetDialogFragment() {
+    private var cylinderType = 0
+    private var cylinderAmount = 0
+
+    private lateinit var binding : FragmentCylinederSelectionBottomBinding
+    private lateinit var listener : OnSelectedCylinderDetailsSubmitListener
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
         }
     }
 
@@ -35,27 +32,68 @@ class CylinederSelectionBottomFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cylineder_selection_bottom, container, false)
+        binding = FragmentCylinederSelectionBottomBinding.inflate(layoutInflater)
+        setUp()
+        binding.radioGroupOptions.setOnCheckedChangeListener { group, checkedId ->
+            Log.d("####", "RadioGroup Options clicked: $checkedId")
+            cylinderType = when (checkedId) {
+                R.id.radio_option_1 -> 1
+                R.id.radio_option_2 -> 2
+                R.id.radio_option_3 -> 3
+                else -> -1 // Default case
+            }
+            Log.d("####", "Selected Cylinder Type: $cylinderType")
+        }
+        binding.confirmButton.setOnClickListener {
+            cylinderAmount = binding.cylinderQuantity.text.toString().toInt()
+            Log.d("####", "onCreateView: $cylinderType $cylinderAmount")
+            listener.selectedCylinderDetails(cylinderType, cylinderAmount)
+            dismiss()
+        }
+        return binding.root
+    }
+
+    private fun setUp() {
+        Log.d("####", "setUp: $cylinderAmount")
+        if (cylinderAmount != -1) {
+            binding.cylinderQuantity.setText(cylinderAmount.toString())
+        }
+        if (cylinderType != -1) {
+            when(cylinderType) {
+                1 -> binding.radioOption1.isChecked = true
+                2 -> binding.radioOption2.isChecked = true
+                3 -> binding.radioOption3.isChecked = true
+            }
+            disableRadioButtons(cylinderType)
+        }
+    }
+
+    private fun disableRadioButtons(type : Int) {
+        binding.radioOption1.isClickable = false
+        binding.radioOption2.isClickable = false
+        binding.radioOption3.isClickable = false
+        if (type == 1) {
+            binding.radioOption1.isClickable = true
+        }
+        if (type == 2) {
+            binding.radioOption2.isClickable = true
+        }
+        if (type == 3) {
+            binding.radioOption3.isClickable = true
+        }
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CylinederSelectionBottomFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(listener : OnSelectedCylinderDetailsSubmitListener, cylinderType : Int, cylinderAmount : Int) =
             CylinederSelectionBottomFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+               this.listener = listener
+                this.cylinderAmount = cylinderAmount
+                this.cylinderType = cylinderType
             }
+    }
+
+    interface OnSelectedCylinderDetailsSubmitListener{
+        fun selectedCylinderDetails(type: Int, quantity: Int)
     }
 }

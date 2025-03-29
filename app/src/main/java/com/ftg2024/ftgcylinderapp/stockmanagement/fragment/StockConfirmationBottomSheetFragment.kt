@@ -8,13 +8,18 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ftg2024.ftgcylinderapp.databinding.FragmentStockConfirmationBottomSheetBinding
+import com.ftg2024.ftgcylinderapp.stockmanagement.adapter.StockConfirmationAdapter
 import com.ftg2024.ftgcylinderapp.stockmanagement.model.StockUpdateRequest
 import com.ftg2024.ftgcylinderapp.stockmanagement.viewmodel.StockManagementViewModel
 import com.ftg2024.ftgcylinderapp.stockmanagement.viewmodel.StockManagementViewModelFactory
 import com.ftg2024.ftgcylinderapp.uidata.Response
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -27,11 +32,13 @@ class StockConfirmationBottomSheetFragment : BottomSheetDialogFragment() {
 
     private val viewModel by viewModels<StockManagementViewModel> { factory }
     private lateinit var binding: FragmentStockConfirmationBottomSheetBinding
-    private lateinit var request: StockUpdateRequest
-    private lateinit var listener : OnStockStatusUpdateListener
-    private var isReturn = false
+    lateinit var request: StockUpdateRequest
+    //lateinit var listener : OnStockStatusUpdateListener
+    var isReturn = false
     private var isFailed = false
     private var isClear = false
+
+    private val dateFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,36 +50,45 @@ class StockConfirmationBottomSheetFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding.labelStockConfirmationNumber.text = if (isReturn) "ERV Number" else "Invoice Number"
+        binding.labelConfirmationInvErvNo.text = if (isReturn) "ERV Number" else "Invoice Number"
         setValues()
         setOnCLickListeners()
-        setUpObservers()
+        //setUpObservers()
         return binding.root
     }
 
     private fun setValues() {
-        val commercialCylinderStock = request.StockDetails[0].Value
-        val domesticCylinderStock = request.StockDetails[1].Value
-        val miniCylinderStock = request.StockDetails[2].Value
-        binding.textviewStockConfirmationCommercialCylinder.text = commercialCylinderStock.toString()
-        binding.textviewStockConfirmationDomesticCylinder.text = domesticCylinderStock.toString()
-        binding.textviewStockConfirmationMiniCylinder.text = miniCylinderStock.toString()
-        binding.textviewStockConfirmationNumber.text = request.INV_ERV_NO
-        binding.textviewStockConfirmationDateTime.text = formattedDate
-        binding.textviewStockConfirmationTotalQuantity.text = (commercialCylinderStock + domesticCylinderStock + miniCylinderStock).toString()
+        val adapter = StockConfirmationAdapter(request.StockDetails)
+        binding.recyclerViewStockConfirmation.apply {
+            layoutManager = LinearLayoutManager(requireContext())
+            this.adapter = adapter
+        }
+        binding.tvConfirmationInvErvNo.text = request.INV_ERV_NO
+        binding.tvConfirmationVehicleNo.text = request.VEHICLE_NO
+        binding.tvConfirmationDate.text = formatDate(request.Date)
     }
-    private fun setOnCLickListeners() {
-        binding.btnConfirm.setOnClickListener {
-            showProgressBar()
-            viewModel.addRemoveStock(request)
+
+   private fun setOnCLickListeners() {
+        binding.buttonConfirmationSubmit.setOnClickListener {
+            dismiss()
+            //listener.onSubmit()
         }
     }
 
-    private fun setUpObservers() {
+    private fun formatDate(inputDate: String): String {
+        val inputFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        val outputFormat = SimpleDateFormat("dd MMM yyyy", Locale.getDefault())
+        val date = inputFormat.parse(inputDate)
+        return outputFormat.format(date ?: return inputDate)  // Returns original if parsing fails
+    }
+    /* private fun setUpObservers() {
         viewModel.updateStockLiveData.observe(viewLifecycleOwner) { response ->
             when(response) {
                 is Response.Success -> {
                     val stockUpdateResponse = response.data
+
+                    Log.d("####", "setUpObservers: $stockUpdateResponse")
+
                     hideProgressBar()
                     if (stockUpdateResponse!= null) {
                         if (stockUpdateResponse.code == 200) {
@@ -105,6 +121,7 @@ class StockConfirmationBottomSheetFragment : BottomSheetDialogFragment() {
 
                 is Response.Error -> {
                     val error = response.exception
+                    Log.d("####", "setUpObservers: ${error.message}")
                     showToast("Something Went Wrong")
                     hideProgressBar()
                 }
@@ -122,7 +139,7 @@ class StockConfirmationBottomSheetFragment : BottomSheetDialogFragment() {
     private fun hideProgressBar() {
         binding.containerStockConfirmationConfirmRequest.visibility = View.VISIBLE
         binding.progressbarStockConfirmationConfirmRequest.visibility = View.INVISIBLE
-    }
+    }*/
 
     private fun showToast(msg : String) {
         Toast.makeText(requireContext(), msg, Toast.LENGTH_SHORT).show()
@@ -131,21 +148,21 @@ class StockConfirmationBottomSheetFragment : BottomSheetDialogFragment() {
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
         Log.d("####", "onDismiss: $isClear $isFailed")
-        listener.onDismiss(isClear, isFailed)
+        //listener.onDismiss(isClear, isFailed)
     }
 
     interface OnStockStatusUpdateListener {
+        fun onSubmit()
         fun stockUpdated(stockCountList : List<Int>)
         fun onDismiss(isClear : Boolean, isFailed : Boolean)
     }
-    companion object {
+    /*companion object {
         @JvmStatic
-        fun newInstance(onStockStatusUpdateListener: OnStockStatusUpdateListener,request: StockUpdateRequest, isReturn: Boolean, formattedDate: String) =
+        fun newInstance(onStockStatusUpdateListener: OnStockStatusUpdateListener, request: StockUpdateRequest, isReturn: Boolean) =
             StockConfirmationBottomSheetFragment().apply {
                 this.isReturn = isReturn
                 this.request = request
-                this.listener = onStockStatusUpdateListener
-                this.formattedDate = formattedDate
+                //this.listener = onStockStatusUpdateListener
             }
-    }
+    }*/
 }

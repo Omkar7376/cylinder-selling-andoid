@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.ftg2024.ftgcylinderapp.R
 import com.ftg2024.ftgcylinderapp.auth.model.LoginRequest
 import com.ftg2024.ftgcylinderapp.auth.viewmodel.LoginViewModelFactory
 import com.ftg2024.ftgcylinderapp.auth.viewmodel.LoginViewmodel
@@ -35,6 +36,7 @@ class LoginActivity : AppCompatActivity() {
     private val viewModel by viewModels<LoginViewmodel> { factory }
 
     private var isAdmin = true
+    private var role : String = "U"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,9 +58,24 @@ class LoginActivity : AppCompatActivity() {
                 //progressDialog.show()
                 progressDialog = ProgressDialog(this, "Validating User")
                 progressDialog.show()
-                viewModel.login(LoginRequest(binding.editextLoginActivityUsername.text.toString(), binding.editextLoginActivityPassword.text.toString(), ""))
+                Log.d("####", "setOnClickListeners: ${binding.radioLoginAdmin.isChecked}, ${binding.radioLoginAgent.isChecked}")
+                viewModel.login(LoginRequest(binding.editextLoginActivityUsername.text.toString(), binding.editextLoginActivityPassword.text.toString(), "",role))
             }
         }
+
+        binding.radioGroup.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.radioLoginAdmin -> {
+                    isAdmin = true
+                    role = "U"
+                }
+                R.id.radioLoginAgent -> {
+                    isAdmin = false
+                    role = "A"
+                }
+            }
+        }
+
     }
 
    private fun navigateToDashboard(isAdmin: Boolean) {
@@ -78,7 +95,6 @@ class LoginActivity : AppCompatActivity() {
                     if (loginResponse.code == 200 && data.isNotEmpty()) {
                         prefManager.saveToken(data[0].token)
                         prefManager.setLoginResponseData(data)
-
                         navigateToDashboard(isAdmin)
                         //startActivity(Intent(this, DashboardActivity::class.java))
                     } else if (loginResponse.code == 304) {

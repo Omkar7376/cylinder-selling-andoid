@@ -77,10 +77,12 @@ class StockCountActivity : AppCompatActivity() {
                             val commercialCountList = stockCountData[3]
                             val domesticCountList = stockCountData[2]
                             val miniCountList = stockCountData[1]
+                            val bcmgCountList = stockCountData[0]
                             //Filled Stock Count
                             binding.textviewStockCountCommercialCount.text = commercialCountList.STOCK_FILLED.toString()
                             binding.textviewStockCountDomesticCount.text = domesticCountList.STOCK_FILLED.toString()
                             binding.textviewStockCountMiniCount.text = miniCountList.STOCK_FILLED.toString()
+                            binding.textviewStockCountBcmgCount.text = bcmgCountList.STOCK_FILLED.toString()
                             binding.textviewStockCountTotalCount.text = (commercialCountList.STOCK_FILLED + domesticCountList.STOCK_FILLED + miniCountList.STOCK_FILLED).toString()
                             binding.textviewStockCountDate.text = formattedDate
 
@@ -88,6 +90,7 @@ class StockCountActivity : AppCompatActivity() {
                             binding.textviewStockCountEmptyCommercialCount.text = commercialCountList.STOCK_EMPTY.toString()
                             binding.textviewStockCountEmptyDomesticCount.text = domesticCountList.STOCK_EMPTY.toString()
                             binding.textviewStockCountEmptyMiniCount.text = miniCountList.STOCK_EMPTY.toString()
+                            binding.textviewStockCountEmptyBcmgCount.text = bcmgCountList.STOCK_EMPTY.toString()
                             binding.textviewStockCountEmptyTotalCount.text = (commercialCountList.STOCK_EMPTY + domesticCountList.STOCK_EMPTY + miniCountList.STOCK_EMPTY).toString()
                             binding.textviewStockEmptyCountDate.text = formattedDate
 

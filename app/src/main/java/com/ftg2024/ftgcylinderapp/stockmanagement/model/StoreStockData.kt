@@ -4,5 +4,6 @@ data class StoreStockData(
     val NAME: String,
     val STOCK_EMPTY: Int,
     val STOCK_FILLED: Int,
-    val TOTAL_STOCK: Int
+    val TOTAL_STOCK: Int,
+    val STOCK_DEFECTIVE : Int
 )

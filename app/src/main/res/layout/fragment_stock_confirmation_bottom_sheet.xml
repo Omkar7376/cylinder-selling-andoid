@@ -9,6 +9,148 @@
     android:orientation="vertical"
     android:background="@color/card_back">
 
+    <TextView
+        android:id="@+id/label_pending_payment"
+        style="@style/base_text_style_bold"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Confirm All Details"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/label_confirmation_inv_erv_no"
+        style="@style/base_text_style_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Invoice Number : "
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view_stock_confirmation"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_stock_confirmation" />
+
+    <TextView
+        android:id="@+id/tv_confirmation_inv_erv_no"
+        style="@style/base_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="8dp"
+        android:text="Abcd3214"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/label_confirmation_inv_erv_no"
+        app:layout_constraintTop_toBottomOf="@+id/recycler_view_stock_confirmation" />
+
+    <TextView
+        android:id="@+id/label_confirmation_vehicle_no"
+        style="@style/base_text_style_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Vehicle Number : "
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view_stock_confirmation"
+        app:layout_constraintTop_toBottomOf="@+id/label_confirmation_inv_erv_no" />
+
+    <TextView
+        android:id="@+id/tv_confirmation_vehicle_no"
+        style="@style/base_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Abcd3214"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/label_confirmation_vehicle_no"
+        app:layout_constraintTop_toTopOf="@+id/label_confirmation_vehicle_no" />
+
+    <TextView
+        android:id="@+id/label_confirmation_date"
+        style="@style/base_text_style_bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Date : "
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view_stock_confirmation"
+        app:layout_constraintTop_toBottomOf="@+id/label_confirmation_vehicle_no" />
+
+    <TextView
+        android:id="@+id/tv_confirmation_date"
+        style="@style/base_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="28 Feb 2025"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@+id/label_confirmation_date"
+        app:layout_constraintTop_toTopOf="@+id/label_confirmation_date" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/base_color"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        android:weightSum="3"
+        app:layout_constraintTop_toBottomOf="@+id/label_pending_payment">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:gravity="center"
+            android:text="Type"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Total"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Defective"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_stock_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        tools:listitem="@layout/item_stock_confirmation_layout"
+        android:background="@drawable/shape_confirmation_recyclerview"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_confirmation_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/base_color"
+        android:text="Submit"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@+id/label_confirmation_date" />
     <ProgressBar
         android:id="@+id/progressbar_stock_confirmation_confirm_request"
         android:layout_width="wrap_content"
@@ -21,7 +163,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <!--<androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/container_stock_confirmation_confirm_request"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -96,6 +238,31 @@
             app:layout_constraintTop_toBottomOf="@+id/label_stock_confirmation_date_time" />
 
         <TextView
+            android:id="@+id/label_stock_confirmation_commercial_cylinder_defective"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Defective Commercial Cylinder : "
+            android:textColor="@color/primary_text_color"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="@+id/label_stock_confirmation_commercial_cylinder"
+            app:layout_constraintTop_toBottomOf="@+id/label_stock_confirmation_commercial_cylinder" />
+
+        <TextView
+            android:id="@+id/textview_stock_confirmation_commercial_cylinder_defective"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:text="25 "
+            android:textColor="@color/primary_text_color"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/label_stock_confirmation_commercial_cylinder_defective"
+            app:layout_constraintTop_toBottomOf="@+id/label_stock_confirmation_commercial_cylinder" />
+
+        <TextView
             android:id="@+id/label_stock_confirmation_domestic_cylinder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -126,7 +293,6 @@
             android:id="@+id/label_stock_confirmation_mini_cylinder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:text="Mini Cylinder : "
             android:textColor="@color/primary_text_color"
             android:textSize="14sp"
@@ -209,6 +375,6 @@
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@+id/label_stock_confirmation_number" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

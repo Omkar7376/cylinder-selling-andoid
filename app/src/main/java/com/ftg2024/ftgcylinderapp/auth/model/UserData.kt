@@ -4,5 +4,6 @@ data class UserData(
     val EMAIL_ID: String,
     val MOBILE_NO: String,
     val NAME: String,
-    val USER_ID: Int
+    val USER_ID: Int,
+    val ROLE : String
 )

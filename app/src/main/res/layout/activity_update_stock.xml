@@ -19,29 +19,389 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Update Cylinder Stock"
         app:titleTextColor="@android:color/white"
         app:navigationIcon="?attr/homeAsUpIndicator"/>
 
 
-    <TextView
-        android:id="@+id/label_update_stock_quantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Please Enter Quantity"
-        android:textColor="@color/primary_text_color"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_add_new_stock" />
+    <!-- ScrollView Below Toolbar -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_add_new_stock"
+        app:layout_constraintBottom_toTopOf="@+id/card_update_stock_quantity_button">
 
-    <com.google.android.material.card.MaterialCardView
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="16dp">
+
+            <!-- Commercial Cylinder -->
+            <TextView
+                android:id="@+id/label_commercial_cylinder_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Total Quantity of 19 Kg Com Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_commercial_cylinder_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_commercial_cylinder_quantity" />
+
+            <TextView
+                android:id="@+id/label_commercial_cylinder_quantity_defective"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Defective Quantity of 19 Kg Com Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_commercial_cylinder_quantity" />
+
+            <EditText
+                android:id="@+id/et_commercial_cylinder_quantity_defective"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_commercial_cylinder_quantity_defective" />
+
+            <TextView
+                android:id="@+id/label_domestic_cylinder_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Total Quantity of 14.2 Kg Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_commercial_cylinder_quantity_defective" />
+
+            <EditText
+                android:id="@+id/et_domestic_cylinder_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_domestic_cylinder_quantity" />
+
+
+            <TextView
+                android:id="@+id/label_domestic_cylinder_quantity_defective"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Defective Quantity of 14.2 Kg Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_domestic_cylinder_quantity" />
+
+            <EditText
+                android:id="@+id/et_domestic_cylinder_quantity_defective"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_domestic_cylinder_quantity_defective" />
+            <!-- Mini Cylinder -->
+            <TextView
+                android:id="@+id/label_mini_cylinder_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Total Quantity of 5 Kg Com Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_domestic_cylinder_quantity_defective" />
+
+            <EditText
+                android:id="@+id/et_mini_cylinder_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_mini_cylinder_quantity" />
+
+            <TextView
+                android:id="@+id/label_mini_cylinder_quantity_defective"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Defective Quantity of 5 Kg Com Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_mini_cylinder_quantity" />
+
+            <EditText
+                android:id="@+id/et_mini_cylinder_quantity_defective"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_mini_cylinder_quantity_defective" />
+
+            <!-- Welding Cylinder -->
+            <TextView
+                android:id="@+id/label_welding_cylinder_quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Total Quantity of 5Kg Dom Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/et_mini_cylinder_quantity_defective" />
+
+            <EditText
+                android:id="@+id/et_welding_cylinder_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_welding_cylinder_quantity" />
+
+            <TextView
+                android:id="@+id/label_welding_cylinder_quantity_defective"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Defectvie Quantity of 5kg Dom Cylinder"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_welding_cylinder_quantity" />
+
+            <EditText
+                android:id="@+id/et_welding_cylinder_quantity_defective"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_welding_cylinder_quantity_defective" />
+
+            <TextView
+                android:id="@+id/label_udate_stocks_date_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Select Date and Time"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_welding_cylinder_quantity_defective" />
+
+            <TextView
+                android:id="@+id/tv_udate_stocks_date_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:background="@drawable/shape_editext_border"
+                android:text="Select Date and Time"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/label_udate_stocks_date_time" />
+
+            <TextView
+                android:id="@+id/label_udate_stocks_inv_erv_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Enter invoice number"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_udate_stocks_date_time" />
+
+            <EditText
+                android:id="@+id/et_udate_stocks_invoice_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="Enter number"
+                android:textColorHint="@color/primary_text_color"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/label_udate_stocks_inv_erv_number" />
+
+            <TextView
+                android:id="@+id/label_udate_stocks_vehicle_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Enter Vehicle Number"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/et_udate_stocks_invoice_number" />
+
+            <EditText
+                android:id="@+id/et_udate_stocks_vehicle_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="8dp"
+                android:paddingVertical="12dp"
+                android:paddingStart="12dp"
+                android:background="@drawable/shape_editext_border"
+                android:hint="Enter number"
+                android:textColorHint="@color/primary_text_color"
+                android:textColor="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/label_udate_stocks_vehicle_number" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/card_update_stock_quantity_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_update_stock_quantity_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="16dp"
+            android:background="@drawable/shape_button_drawable"
+            android:paddingVertical="12dp"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </LinearLayout>
+
+    <!--<com.google.android.material.card.MaterialCardView
         android:id="@+id/card_dashboard_view_assigned_cylinders"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="160dp"
         app:cardBackgroundColor="@color/card_back"
         app:strokeColor="@color/base_color"
         app:layout_constraintEnd_toEndOf="parent"
@@ -55,8 +415,8 @@
 
             <TextView
                 android:id="@+id/tv_commercial_cylinder"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_width="161dp"
+                android:layout_height="27dp"
                 android:layout_marginStart="16dp"
                 android:text="Commercial Cylinder :"
                 android:textColor="@color/primary_text_color"
@@ -87,7 +447,7 @@
                 app:layout_constraintStart_toEndOf="@+id/tv_commercial_cylinder"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+         &lt;!&ndash;   <TextView
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,7 +458,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/et_commercial_cylinder_quantity"
                 app:layout_constraintStart_toStartOf="@+id/et_commercial_cylinder_quantity"
                 app:layout_constraintTop_toBottomOf="@+id/et_commercial_cylinder_quantity" />
-
+&ndash;&gt;
             <TextView
                 android:id="@+id/label_error_commercial"
                 android:layout_width="wrap_content"
@@ -165,7 +525,7 @@
                 app:layout_constraintStart_toEndOf="@+id/tv_domestic_cylinder"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+          &lt;!&ndash;  <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -176,7 +536,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/et_domestic_cylinder_quantity"
                 app:layout_constraintStart_toStartOf="@+id/et_domestic_cylinder_quantity"
                 app:layout_constraintTop_toBottomOf="@+id/et_domestic_cylinder_quantity" />
-
+&ndash;&gt;
             <TextView
                 android:id="@+id/label_error_domestic"
                 android:layout_width="wrap_content"
@@ -190,18 +550,92 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_update_stock_welding_cylinder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/card_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_dashboard_view_agent_returns"
+        app:strokeColor="@color/base_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp">
+
+            <TextView
+                android:id="@+id/tv_welding_cylinder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Welding Cylinder :"
+                android:textColor="@color/primary_text_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_welding_cylinder_quantity"
+                app:layout_constraintEnd_toStartOf="@+id/et_welding_cylinder_quantity"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/et_welding_cylinder_quantity" />
+
+            <EditText
+                android:id="@+id/et_welding_cylinder_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/shape_editext_border"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_welding_cylinder"
+                app:layout_constraintTop_toTopOf="parent" />
+
+         &lt;!&ndash; <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="QYT"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/et_welding_cylinder_quantity"
+                app:layout_constraintStart_toStartOf="@+id/et_welding_cylinder_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/et_welding_cylinder_quantity" />
+&ndash;&gt;
+            <TextView
+            android:id="@+id/label_error_domestic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Available Stock : 1000"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/et_domestic_cylinder_quantity"
+            app:layout_constraintStart_toStartOf="@+id/et_domestic_cylinder_quantity"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card_dashboard_view_third_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         app:cardBackgroundColor="@color/card_back"
-        app:strokeColor="@color/base_color"
-        app:layout_constraintTop_toBottomOf="@id/card_dashboard_view_agent_returns"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/card_update_stock_welding_cylinder"
+        app:strokeColor="@color/base_color">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -230,9 +664,9 @@
                 android:layout_marginHorizontal="16dp"
                 android:background="@drawable/shape_editext_border"
                 android:gravity="center"
+                android:hint="0"
                 android:inputType="number"
                 android:paddingVertical="8dp"
-                android:hint="0"
                 android:textColor="@color/primary_text_color"
                 android:textColorHint="@color/primary_text_color"
                 android:textSize="14sp"
@@ -241,7 +675,7 @@
                 app:layout_constraintStart_toEndOf="@+id/tv_mini_lpg"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            &lt;!&ndash;  <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -252,13 +686,13 @@
                 app:layout_constraintEnd_toEndOf="@+id/et_mini_lpg_quantity"
                 app:layout_constraintStart_toStartOf="@+id/et_mini_lpg_quantity"
                 app:layout_constraintTop_toBottomOf="@+id/et_mini_lpg_quantity" />
-
+&ndash;&gt;
             <TextView
                 android:id="@+id/label_error_mini"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Available Stock : 1000"
                 android:layout_marginTop="8dp"
+                android:text="Available Stock : 1000"
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="@+id/et_mini_lpg_quantity"
                 app:layout_constraintStart_toStartOf="@+id/et_mini_lpg_quantity"
@@ -266,6 +700,80 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_dashboard_view_faulty_cylinder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/card_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_update_stock_welding_cylinder"
+        app:strokeColor="@color/base_color">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="20dp">
+
+            <TextView
+                android:id="@+id/tv_faulty_lpg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Faulty Cylinder : "
+                android:textColor="@color/primary_text_color"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/et_faulty_lpg_quantity"
+                app:layout_constraintEnd_toStartOf="@+id/et_faulty_lpg_quantity"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/et_faulty_lpg_quantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/shape_editext_border"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                android:paddingVertical="8dp"
+                android:textColor="@color/primary_text_color"
+                android:textColorHint="@color/primary_text_color"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/tv_faulty_lpg"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            &lt;!&ndash;  <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="QYT"
+                android:textColor="@color/primary_text_color"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/et_mini_lpg_quantity"
+                app:layout_constraintStart_toStartOf="@+id/et_mini_lpg_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/et_mini_lpg_quantity" />
+&ndash;&gt;
+            <TextView
+                android:id="@+id/label_error_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Available Stock : 1000"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/et_mini_lpg_quantity"
+                app:layout_constraintStart_toStartOf="@+id/et_mini_lpg_quantity"
+                app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
     <EditText
         android:id="@+id/editText_update_activity_number"
         android:layout_width="0dp"
@@ -316,6 +824,6 @@
         android:textColor="@color/primary_text_color"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@+id/label_update_stock_date_time"
-        app:layout_constraintTop_toTopOf="@+id/label_update_stock_date_time" />
+        app:layout_constraintTop_toTopOf="@+id/label_update_stock_date_time" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

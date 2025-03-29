@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".distributionmanagement.AgentDistributionConfirmationActivity">
+
+    <TextView
+        android:id="@+id/label_Distribution_confirmation"
+        style="@style/base_text_style_bold"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Confirm All Details"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_agent_distribution_confirmation"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_Distribution_confirmation">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/label_activity_agent_distribution_confirmation_date"
+            android:layout_width="24dp"
+            android:layout_height="40dp"
+            android:background="@drawable/table_item_border"
+            android:gravity="center"
+            android:text="Date"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview_activity_agent_distribution_confirmation_date"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:textColor="@color/black"
+            android:background="@drawable/table_item_border2"
+            android:gravity="center"
+            android:text=""
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/label_activity_agent_distribution_confirmation_deliveryBoyName"
+            android:layout_width="24dp"
+            android:layout_height="40dp"
+            android:background="@drawable/table_item_border"
+            android:gravity="center"
+            android:text="Delivery Boy Name"
+            android:textColor="@color/black"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textview_activity_agent_distribution_confirmation_deliveryBoyName"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:textColor="@color/black"
+            android:background="@drawable/table_item_border2"
+            android:gravity="center"
+            android:text=""
+            android:textStyle="bold" />
+    </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_agent_distribution_confirmation2"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_agent_distribution_confirmation">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_agent_distribution_confirmation_14.2kg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_item_border3"
+                android:gravity="center"
+                android:text="14.2 kg Cylender"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_agent_distribution_confirmation3"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_agent_distribution_confirmation2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_agent_distribution_confirmation_14.2kg_full"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:background="@drawable/table_item_border6"
+                android:gravity="center"
+                android:text="Full"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_activity_agent_distribution_confirmation_14.2kg_full"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border6"
+                android:gravity="center"
+                android:text="0"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_agent_distribution_confirmation4"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_agent_distribution_confirmation3">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_agent_distribution_confirmation_5kg_dom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_item_border3"
+                android:gravity="center"
+                android:text="5 kg dom. Cylender"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_agent_distribution_confirmation5"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_agent_distribution_confirmation4">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_agent_distribution_confirmation_5kg_dom_full"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border6"
+                android:gravity="center"
+                android:text="Full"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_activity_agent_distribution_confirmation_5kg_dom_full"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border6"
+                android:gravity="center"
+                android:text="0"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_agent_distribution_confirmation6"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_agent_distribution_confirmation5">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_agent_distribution_confirmation_19kg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_item_border3"
+                android:gravity="center"
+                android:text="19 kg Cylender"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_agent_distribution_confirmation7"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_agent_distribution_confirmation6">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_agent_distribution_confirmation_19kg_full"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border6"
+                android:gravity="center"
+                android:text="Full"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_activity_agent_distribution_confirmation_19kg_full"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border6"
+                android:gravity="center"
+                android:text="0"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_agent_distribution_confirmation8"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_agent_distribution_confirmation7">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_agent_distribution_confirmation_5kg_com"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/table_item_border3"
+                android:gravity="center"
+                android:text="5 kg com. Cylender"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tablelayout_activity_agent_distribution_confirmation9"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:stretchColumns="*"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tablelayout_activity_agent_distribution_confirmation8">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label_activity_agent_distribution_confirmation_5kg_com_full"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border4"
+                android:gravity="center"
+                android:text="Full"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView_activity_agent_distribution_confirmation_5kg_com_full"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:textColor="@color/black"
+                android:background="@drawable/table_item_border4"
+                android:gravity="center"
+                android:text="0"
+                android:textStyle="bold" />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:id="@+id/container_button_activity_agent_distribution_confirmation_submit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_confirmation_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            android:layout_marginVertical="16dp"
+            android:background="@drawable/shape_button_drawable"
+            android:paddingVertical="12dp"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
